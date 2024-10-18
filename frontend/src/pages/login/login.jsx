@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import './Login.scss';
+import './login.scss';
 
 export default function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = (e) => {
+    const login = (e) => {
         e.preventDefault();
         console.log('Username:', username);
         console.log('Password:', password);
@@ -16,8 +16,9 @@ export default function Login() {
 
     return (
         <div className="login-container">
+            <img src="./logo.png" alt="logozinha"  />
             <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={login}>
                 <div>
                     <label htmlFor="username">Usuário:</label>
                     <input
@@ -38,7 +39,7 @@ export default function Login() {
                         required
                     />
                 </div>
-                <button type="submit">Entrar</button>
+                <button className="login-button">Entrar</button>
             </form>
         </div>
     );
